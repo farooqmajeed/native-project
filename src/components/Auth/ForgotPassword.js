@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import { Text } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { Container, Content, CardItem, Form, Item, Input, Label, Button } from 'native-base';
-import { emailChanged, loginUser } from '../../store/actions'
+import { AuthActions } from '../../store/actions'
 
 class ForgotPassword extends Component {
 
     onEmailChange(text) {
-        this.props.emailChanged(text);
+        this.props.emailChange(text);
 
     }
 
@@ -44,7 +44,7 @@ class ForgotPassword extends Component {
                         </CardItem>
 
                         <CardItem>
-                            <Button block success style={styles.buttonStyle} onPress={this.onButtonPress.bind(this)} >
+                            <Button block success style={styles.buttonStyle} onPress={() => Actions.forgotPassword()} >
                                 <Text> Send me </Text>
                             </Button>
                         </CardItem>
