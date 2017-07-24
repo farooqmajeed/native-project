@@ -49,7 +49,7 @@ class SignupForm extends Component {
                         </CardItem>
 
                         <CardItem>
-                            <Item floatingLabel>
+                          <Item floatingLabel>
                                 <Label>PASSWORD</Label>
                                 <Input
                                     secureTextEntry
