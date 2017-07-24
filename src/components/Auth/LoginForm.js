@@ -57,16 +57,17 @@ class LoginForm extends Component {
 
                         </CardItem>
                         <CardItem>
+
+                            {this.renderButton()}
                             <Text style={styles.errorTextStyle} >
                                 {this.props.error}
                             </Text>
-                            {this.renderButton()}
                         </CardItem>
                         <CardItem>
-                            <Text style={styles.textStyle} > Forget Password? </Text>
+                            <Text style={styles.textStyle} onPress={() => Actions.forgotPassword()}  > Forget Password? </Text>
                         </CardItem>
                         <CardItem>
-                            <Text style={{ marginLeft: 90, marginTop: 30 }} onPress={() => Actions.forgotpassword()} >  Do not have an account? </Text>
+                            <Text style={{ marginLeft: 90, marginTop: 30 }} >  Do not have an account? </Text>
                         </CardItem>
                         <CardItem>
                             <Text style={styles.textStyle2} onPress={() => Actions.signup()}> Register  </Text>
@@ -82,7 +83,8 @@ const styles = {
     errorTextStyle: {
         fontSize: 20,
         alignSelf: 'center',
-        color: 'red'
+        color: 'red',
+        marginTop: 100
     },
     containerStyle: {
         marginTop: 80,
@@ -120,7 +122,7 @@ const mapStateToProps = ({ auth }) => {
     const { email, password, error, loading } = auth;
 
     return { email, password, error, loading };
-   
+
 };
 
 const mapDispatchToProps = (dispatch) => {
