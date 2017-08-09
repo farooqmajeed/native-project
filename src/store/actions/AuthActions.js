@@ -43,7 +43,7 @@ export class AuthActions {
             dispatch({ type: LOGIN_USER });
             firebase.auth().signInWithEmailAndPassword(email, password)
                 .then(user => AuthActions.loginUserSuccess(dispatch, user))
-                .catch((dispatch) => AuthActions.loginUserFail());
+                .catch(() => AuthActions.loginUserFail(dispatch));
         };
     };
 
@@ -65,7 +65,7 @@ export class AuthActions {
             dispatch({ type: SIGNUP_USER });
             firebase.auth().createUserWithEmailAndPassword(email, password)
                 .then(user => AuthActions.signupUserSuccess(dispatch, user))
-                .catch(() => AuthActions.signupUserFail());
+                .catch(() => AuthActions.signupUserFail(dispatch));
         };
     };
 

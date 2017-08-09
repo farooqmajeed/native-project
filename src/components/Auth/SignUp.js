@@ -49,13 +49,13 @@ class SignupForm extends Component {
                         </CardItem>
 
                         <CardItem>
-                          <Item floatingLabel>
+                            <Item floatingLabel>
                                 <Label>PASSWORD</Label>
                                 <Input
                                     secureTextEntry
                                     onChangeText={this.onPasswordChange.bind(this)}
                                     value={this.props.password}
-                                    />
+                                />
                             </Item>
                         </CardItem>
                         <CardItem>
@@ -65,14 +65,15 @@ class SignupForm extends Component {
                                     secureTextEntry
                                     onChangeText={this.onRetryPassword.bind(this)}
                                     value={this.props.retryPassword}
-                                    />
+                                />
                             </Item>
                         </CardItem>
                         <CardItem>
+                            {this.renderButton()}
+
                             <Text style={styles.errorTextStyle} >
                                 {this.props.error}
                             </Text>
-                            {this.renderButton()}
                         </CardItem>
                         <CardItem>
                             <Text style={{ marginLeft: 90, marginTop: 30 }}>  Do not have an account? </Text>
@@ -91,8 +92,10 @@ class SignupForm extends Component {
 const styles = {
     errorTextStyle: {
         fontSize: 20,
-        alignSelf: 'center',
-        color: 'red'
+        // alignSelf: 'center',
+        color: 'red',
+        marginLeft: -180,
+        marginTop: 50
     },
     containerStyle: {
         marginTop: 100,
@@ -102,7 +105,7 @@ const styles = {
     },
     buttonStyle: {
         marginLeft: 80,
-        width: 180
+        width: 180,
     },
     textStyle2: {
         marginTop: -15,
@@ -110,7 +113,7 @@ const styles = {
         marginLeft: 150,
     },
     spinnerStyle: {
-        marginLeft: 130
+        marginLeft: 160
     }
 
 };
@@ -118,7 +121,7 @@ const mapStateToProps = ({ auth }) => {
     const { email, password, error, loading } = auth;
 
     return { email, password, error, loading };
-   
+
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -129,4 +132,4 @@ const mapDispatchToProps = (dispatch) => {
         signupUser: (userData) => dispatch(AuthActions.signupUser(userData))
     };
 };
-export default connect(mapStateToProps,mapDispatchToProps)(SignupForm); 
+export default connect(mapStateToProps, mapDispatchToProps)(SignupForm); 

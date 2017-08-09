@@ -34,6 +34,7 @@ class LoginForm extends Component {
     render() {
         return (
             <Container style={styles.containerStyle}>
+                
                 <Content>
                     <Form >
                         <CardItem>
@@ -84,7 +85,8 @@ const styles = {
         fontSize: 20,
         alignSelf: 'center',
         color: 'red',
-        marginTop: 100
+        marginTop: 50,
+        marginLeft: -180
     },
     containerStyle: {
         marginTop: 80,
@@ -107,7 +109,7 @@ const styles = {
         marginLeft: 150,
     },
     spinnerStyle: {
-        marginLeft: 130
+        marginLeft: 150
     }
 }
 // const mapStateToProps = (state) => {
