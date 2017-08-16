@@ -5,10 +5,9 @@ import LoginForm from './components//Auth/LoginForm';
 import SignupForm from './components/Auth/SignUp';
 import Dashboard from './components/dashboard';
 import ForgotPassword from './components/Auth/ForgotPassword';
-import PackageDetailScreen from './components/Packages/PackageDetailScreen'
-// import MyFavorites from './components/Packages/myFavorites';
+import PackageDetailScreen from './components/Packages/PackageDetailScreen';
 import MyFavorites from './containers/Cart';
-
+import Checkout from './containers/checkOutContainer'
 const RouterComponent = () => {
     return (
         <Router sceneStyle={{ paddingTop: 65 }}>
@@ -22,7 +21,8 @@ const RouterComponent = () => {
             <Scene key='main'>
                 <Scene key="dashboard" component={Dashboard} hideNavBar={true} />
                 <Scene key="packageDetails" component={PackageDetailScreen} hideNavBar={true} />
-                <Scene key="myfavorite" component={MyFavorites} hideNavBar={true} initial />
+                <Scene key="myfavorite" component={MyFavorites} hideNavBar={true} />
+                <Scene key="checkout" component={Checkout} hideNavBar={true} initial />
 
 
             </Scene>

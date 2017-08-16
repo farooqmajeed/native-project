@@ -16,3 +16,5 @@ export const CART_ADD_SUCCESSFULLY    = "cart_add_successfully";
 export const CART_REMOVE              = "cart_remove";
 export const CART_REMOVE_SUCCESSFULLY = "cart_remove_successfully";
 
+export const CHECK_OUT                = "check_out";
+export const CHECK_OUT_SUCCESSFULLY   = "check_out_successfully";
