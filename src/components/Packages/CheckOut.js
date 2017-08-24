@@ -143,11 +143,11 @@ class Checkout extends Component {
 
                         </Card>
                         <Button block success onPress={() => this.generateBill()}><Text>Generate Bill</Text></Button>
-                        <CardItem>
-                            <Text>
-                                <H2> {this.state.totalPrice} </H2>
-                            </Text>
-                        </CardItem>
+                        <CardItem style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                        <Text>
+                            <H2> {this.state.totalPrice} </H2>
+                        </Text>
+                    </CardItem>
 
                     </ScrollView>
 
